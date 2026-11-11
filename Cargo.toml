@@ -9,7 +9,7 @@ license = "MIT OR Apache-2.0"
 readme = "README.md"
 keywords = ["jpeg", "image", "resize", "exif", "batch"]
 categories = ["command-line-utilities", "multimedia::images"]
-exclude = ["/.github", "/files.txt", "/compress.sh"]
+exclude = ["/.github"]
 
 [dependencies]
 fast_image_resize = "5"

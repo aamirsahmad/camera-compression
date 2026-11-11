@@ -37,7 +37,7 @@ absent, and output is flat.
 camera-compression ~/Pictures/Camera/2026/07 ~/Pictures/compressed
 
 # or drive it from an explicit list
-camera-compression files.txt ~/Pictures/compressed
+camera-compression paths.txt ~/Pictures/compressed
 ```
 
 Re-running skips inputs whose output already exists, so an interrupted batch
@@ -50,7 +50,7 @@ and names them rather than dropping one silently.
 
 ## Why not just use ffmpeg
 
-Benchmarked against the original `compress.sh` on 187 Sony ILCE-7M4 frames
+Benchmarked against an equivalent `ffmpeg` + GNU `parallel` pipeline on 187 Sony ILCE-7M4 frames
 (7008×4672, 4:2:2), warm cache, 16 cores.
 
 ### It resamples in RGB, not subsampled YUV
