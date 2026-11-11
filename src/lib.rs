@@ -29,6 +29,6 @@ pub mod pipeline;
 pub mod source;
 
 pub use batch::{Progress, Silent, Stats};
-pub use config::{Chroma, Config, MetadataPolicy, DEFAULT_MAX_WIDTH, DEFAULT_QUALITY};
+pub use config::{Chroma, Config, DEFAULT_MAX_WIDTH, DEFAULT_QUALITY, MetadataPolicy};
 pub use error::{Error, Result};
 pub use pipeline::Outcome;

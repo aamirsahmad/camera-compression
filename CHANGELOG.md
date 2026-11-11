@@ -6,6 +6,11 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Moved to Rust edition 2024 and dropped the minimum supported Rust version;
+  only the latest stable toolchain is supported.
+
 ## [0.1.1] - 2026-11-10
 
 ### Changed

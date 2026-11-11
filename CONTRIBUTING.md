@@ -17,8 +17,8 @@ cargo clippy --all-targets   # must be clean; lints are configured in Cargo.toml
 cargo test
 ```
 
-CI runs the same three on Linux, macOS, and Windows, plus a `cargo check` against
-the MSRV in `Cargo.toml` and a `cargo doc` pass with warnings denied.
+CI runs the same three on Linux, macOS, and Windows on the latest stable Rust,
+plus a `cargo doc` pass with warnings denied. Only current stable is supported.
 
 Keeping the crate free of C dependencies is deliberate: it is what makes the
 release matrix (including static musl builds) work without cross-toolchains.

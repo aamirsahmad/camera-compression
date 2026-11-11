@@ -8,7 +8,7 @@ mod cli;
 use std::path::{Path, PathBuf};
 use std::process::ExitCode;
 
-use camera_compression::{batch, source, Config, Error, Progress, Result};
+use camera_compression::{Config, Error, Progress, Result, batch, source};
 use cli::Parsed;
 use indicatif::{ProgressBar, ProgressStyle};
 

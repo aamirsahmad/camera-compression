@@ -35,17 +35,6 @@ jobs:
       - uses: Swatinem/rust-cache@v2
       - run: cargo test --all-features
 
-  msrv:
-    name: minimum supported Rust version
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      # Keep in step with `rust-version` in Cargo.toml.
-      - uses: dtolnay/rust-toolchain@1.82.0
-      - uses: Swatinem/rust-cache@v2
-      # Check rather than test: dev-dependencies are free to outpace the MSRV.
-      - run: cargo check --all-features
-
   docs:
     name: rustdoc
     runs-on: ubuntu-latest

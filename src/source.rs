@@ -177,7 +177,7 @@ mod tests {
     #[test]
     fn walk_on_empty_tree_yields_nothing() {
         let dir = tempfile::tempdir().unwrap();
-        assert!(walk(dir.path()).unwrap().is_empty());
+        assert_eq!(walk(dir.path()).unwrap(), [] as [PathBuf; 0]);
     }
 
     #[test]
@@ -211,7 +211,7 @@ mod tests {
         let dir = tempfile::tempdir().unwrap();
         let list = dir.path().join("empty.txt");
         fs::write(&list, "").unwrap();
-        assert!(read_list(&list).unwrap().is_empty());
+        assert_eq!(read_list(&list).unwrap(), [] as [PathBuf; 0]);
     }
 
     #[test]
@@ -262,6 +262,6 @@ mod tests {
             .iter()
             .map(PathBuf::from)
             .collect();
-        assert!(colliding_stems(&files).is_empty());
+        assert_eq!(colliding_stems(&files), [] as [String; 0]);
     }
 }

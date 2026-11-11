@@ -9,7 +9,7 @@
 //!
 //! Short flags are not bundled: `-fk` is an error rather than `-f -k`.
 
-use camera_compression::{Chroma, Config, MetadataPolicy, DEFAULT_MAX_WIDTH, DEFAULT_QUALITY};
+use camera_compression::{Chroma, Config, DEFAULT_MAX_WIDTH, DEFAULT_QUALITY, MetadataPolicy};
 use std::path::PathBuf;
 
 /// What the user asked for.
@@ -180,7 +180,7 @@ impl Options {
                     "expected 2 paths, got {}: {}",
                     more.len(),
                     more.join(", ")
-                ))
+                ));
             }
         };
 

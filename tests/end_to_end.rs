@@ -6,7 +6,7 @@ use std::path::PathBuf;
 use std::sync::atomic::{AtomicUsize, Ordering};
 
 use camera_compression::{
-    batch, orient, pipeline, source, Chroma, Config, MetadataPolicy, Outcome, Progress, Silent,
+    Chroma, Config, MetadataPolicy, Outcome, Progress, Silent, batch, orient, pipeline, source,
 };
 use common::{at, dimensions, listing, orientation_of, write_jpeg, write_jpeg_with_orientation};
 

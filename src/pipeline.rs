@@ -180,33 +180,33 @@ fn attach_metadata<W: jpeg_encoder::JfifWrite>(
     }
     let md = metadata::extract(original);
 
-    if config.metadata.exif {
-        if let Some(mut exif) = md.exif {
-            // Pixels are already upright; clear the tag so viewers do not
-            // rotate a second time.
-            metadata::normalize_orientation(&mut exif);
-            // The payload already carries its `Exif\0\0` identifier, so it goes
-            // out as a raw APP1 rather than through `add_exif_metadata`, which
-            // would prepend a second one.
-            encoder
-                .add_app_segment(1, exif)
-                .map_err(|e| Error::jpeg(path, format!("attach exif: {e}")))?;
-        }
+    if config.metadata.exif
+        && let Some(mut exif) = md.exif
+    {
+        // Pixels are already upright; clear the tag so viewers do not
+        // rotate a second time.
+        metadata::normalize_orientation(&mut exif);
+        // The payload already carries its `Exif\0\0` identifier, so it goes
+        // out as a raw APP1 rather than through `add_exif_metadata`, which
+        // would prepend a second one.
+        encoder
+            .add_app_segment(1, exif)
+            .map_err(|e| Error::jpeg(path, format!("attach exif: {e}")))?;
     }
-    if config.metadata.xmp {
-        if let Some(xmp) = md.xmp {
-            encoder
-                .add_app_segment(1, xmp)
-                .map_err(|e| Error::jpeg(path, format!("attach xmp: {e}")))?;
-        }
+    if config.metadata.xmp
+        && let Some(xmp) = md.xmp
+    {
+        encoder
+            .add_app_segment(1, xmp)
+            .map_err(|e| Error::jpeg(path, format!("attach xmp: {e}")))?;
     }
-    if config.metadata.icc {
-        if let Some(icc) = md.icc {
-            // Re-chunks across APP2 segments as the ICC spec requires.
-            encoder
-                .add_icc_profile(&icc)
-                .map_err(|e| Error::jpeg(path, format!("attach icc profile: {e}")))?;
-        }
+    if config.metadata.icc
+        && let Some(icc) = md.icc
+    {
+        // Re-chunks across APP2 segments as the ICC spec requires.
+        encoder
+            .add_icc_profile(&icc)
+            .map_err(|e| Error::jpeg(path, format!("attach icc profile: {e}")))?;
     }
     Ok(())
 }

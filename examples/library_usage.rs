@@ -1,6 +1,6 @@
 //! The snippet from the README, kept compiling by `cargo test --all-targets`.
 
-use camera_compression::{batch, source, Chroma, Config, Silent};
+use camera_compression::{Chroma, Config, Silent, batch, source};
 use std::path::Path;
 
 fn main() -> Result<(), camera_compression::Error> {

@@ -103,7 +103,7 @@ mod tests {
 
     /// Reduce a buffer to its red channel, for legible assertions.
     fn reds(buf: &[u8]) -> Vec<u8> {
-        buf.chunks_exact(3).map(|p| p[0]).collect()
+        buf.as_chunks::<3>().0.iter().map(|p| p[0]).collect()
     }
 
     #[test]
