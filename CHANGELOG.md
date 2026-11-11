@@ -6,6 +6,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-11-10
+
 ### Changed
 
 - Moved to Rust edition 2024 and dropped the minimum supported Rust version;
@@ -55,6 +57,7 @@ First release. Replaces a `parallel` + `ffmpeg` shell pipeline.
   double. The default quality of 92 was measured to match mozjpeg q90 in SSIM
   on Sony ILCE-7M4 frames.
 
-[Unreleased]: https://github.com/aamirsahmad/camera-compression/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/aamirsahmad/camera-compression/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/aamirsahmad/camera-compression/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/aamirsahmad/camera-compression/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/aamirsahmad/camera-compression/releases/tag/v0.1.0
